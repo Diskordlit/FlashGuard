@@ -18,16 +18,6 @@ import RestaurantLandingPageImageSrc from "images/demo/RestaurantLandingPage.jpe
 import ServiceLandingPageImageSrc from "images/demo/ServiceLandingPage.jpeg";
 import HostingCloudLandingPageImageSrc from "images/demo/HostingCloudLandingPage.jpeg";
 
-
-import LoginPage from "pages/Login.js";
-import SignupPage from "pages/Signup.js";
-import PricingPage from "pages/Pricing.js";
-import AboutUsPage from "pages/AboutUs.js";
-import ContactUsPage from "pages/ContactUs.js";
-import BlogIndexPage from "pages/BlogIndex.js";
-import TermsOfServicePage from "pages/TermsOfService.js";
-import PrivacyPolicyPage from "pages/PrivacyPolicy.js";
-
 import LoginPageImageSrc from "images/demo/LoginPage.jpeg";
 import SignupPageImageSrc from "images/demo/SignupPage.jpeg";
 import PricingPageImageSrc from "images/demo/PricingPage.jpeg";
@@ -137,51 +127,6 @@ export const components = {
       imageSrc: HostingCloudLandingPageImageSrc,
       url: "/components/landingPages/HostingCloudLandingPage",
     },
-  },
-
-  innerPages: {
-    LoginPage: {
-      component: LoginPage,
-      imageSrc: LoginPageImageSrc,
-      scrollAnimationDisabled: true,
-      url: "/components/innerPages/LoginPage",
-    },
-    SignupPage: {
-      component: SignupPage,
-      url: `/components/innerPages/SignupPage`,
-      imageSrc: SignupPageImageSrc,
-      scrollAnimationDisabled: true,
-    },
-    PricingPage: {
-      component: PricingPage,
-      url: `/components/innerPages/PricingPage`,
-      imageSrc: PricingPageImageSrc,
-    },
-    AboutUsPage: {
-      component: AboutUsPage,
-      url: `/components/innerPages/AboutUsPage`,
-      imageSrc: AboutUsPageImageSrc,
-    },
-    ContactUsPage: {
-      component: ContactUsPage,
-      url: `/components/innerPages/ContactUsPage`,
-      imageSrc: ContactUsPageImageSrc,
-    },
-    BlogIndexPage: {
-      component: BlogIndexPage,
-      url: `/components/innerPages/BlogIndexPage`,
-      imageSrc: BlogIndexPageImageSrc,
-    },
-    TermsOfServicePage: {
-      component: TermsOfServicePage,
-      url: `/components/innerPages/TermsOfServicePage`,
-      imageSrc: TermsOfServicePageImageSrc,
-    },
-    PrivacyPolicyPage: {
-      component: PrivacyPolicyPage,
-      url: `/components/innerPages/PrivacyPolicyPage`,
-      imageSrc: PrivacyPolicyPageImageSrc,
-    }
   },
 
   blocks: {
