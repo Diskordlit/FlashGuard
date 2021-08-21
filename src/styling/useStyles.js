@@ -1,5 +1,4 @@
-import { alpha, makeStyles } from '@material-ui/core/styles';
-
+import { createTheme , makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,28 +7,11 @@ export const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
     },
   },
   searchIcon: {
@@ -60,12 +42,22 @@ export const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
   },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
+  appBarStyle: {
+    backgroundColor: "#0F7F9E",
+    justifyContent: 'center', //Centered horizontally
+    alignItems: 'center', //Centered vertically
+    flex: 1,
+    boxShadow: 'none',
   },
-  
+  appBarStyle2: {
+    marginTop: '64px',
+    backgroundColor: "#15A9D1",
+    justifyContent: 'center', //Centered horizontally
+    alignItems: 'center', //Centered vertically
+    flex: 1
+  },
+  appBarButton: {
+    backgroundColor: "#AB449A",
+  }
 }));
 
