@@ -6,6 +6,7 @@ import { } from '@material-ui/core'
 import { ThemeProvider , makeStyles } from '@material-ui/core/styles';
 import customTheme from './styling/customTheme';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import MovieCards from './component/MovieCards';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
               </Route>
               <Route exact path="/home">
                 <div className="content">
-                  Test 1
+                  <MovieCards/>
                 </div>
               </Route>
             </Switch>
