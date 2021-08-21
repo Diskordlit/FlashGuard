@@ -14,15 +14,13 @@ export default function NavBar() {
         <div>
             <AppBar className={classes.appBarStyle}>
                 <Toolbar className={classes.toolBarStyle}>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        PLACEHOLDERNAME
+                    <Typography className={classes.title} variant="h4" noWrap>
+                        FlashGuard
                     </Typography>
-                </Toolbar>
-            </AppBar>
-            <AppBar className={classes.appBarStyle2}>
-                <Toolbar className={classes.toolBarStyle2}>
-                    <Button className={classes.toolBarButton} variant="contained" color="secondary">Search Movie</Button>
-                    <Button className={classes.toolBarButton} variant="contained" color="secondary">About Us</Button>   
+                    <div className="buttonContainer">
+                        <Button className={classes.toolBarButton} variant="contained" color="secondary">Try The Extension</Button>
+                        <Button className={classes.toolBarButton} variant="contained" color="secondary">About Us</Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         </div>

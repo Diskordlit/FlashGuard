@@ -13,6 +13,7 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    fontWeight: "bold",
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -43,10 +44,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   appBarStyle: {
-    backgroundColor: "#0F7F9E",
-    justifyContent: 'center', //Centered horizontally
-    alignItems: 'center', //Centered vertically
-    flex: 1,
+    backgroundColor: "#3F3D56",
     boxShadow: 'none',
   },
   appBarStyle2: {
@@ -57,7 +55,15 @@ export const useStyles = makeStyles((theme) => ({
     flex: 1
   },
   toolBarButton: {
-    margin: 5,
+    marginLeft:50,
+
+  },
+  toolBarStyle: {
+    
+  },
+  buttonContainer: {
+    position: "relative",
+    right: 0,
   },
   appBarButton: {
     backgroundColor: "#AB449A",
@@ -84,6 +90,11 @@ export const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(5),
+    backgroundColor: '#5B587C',
+    color: "white",
   },
+  heading: {
+    color: "white",
+  }
 }));
 
