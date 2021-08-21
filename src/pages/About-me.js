@@ -14,19 +14,21 @@ import plans from "../assets/plans.svg";
 export default function AboutMe() {
   const classes = useStyles();
   const TypoStyle = { textAlign: "justify" };
-  const liMarginBottom = "40px"
+  const liMarginBottom = "40px";
+  document.body.style = "background: #0B3E82;";
   return (
     <div>
       <NavBar />
       <div style={{ marginTop: "100px" }}>
-        <Card variant="outlined">
+        <Card variant="outlined" style={{ backgroundColor: "#0B3E82" }}>
           <CardContent>
             <h1>About Us</h1>
-            <Accordion>
+            <Accordion style={{ backgroundColor: "#19A9AD" }}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
+                style={{ backgroundColor: "#19A9AD" }}
               >
                 <Typography className={classes.heading}>
                   <b>Who are we?</b>
@@ -34,13 +36,19 @@ export default function AboutMe() {
               </AccordionSummary>
               <AccordionDetails>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
+                  A small group of students that plans to Prevent seizure caused
+                  by photosensitivity using:
+                  <ul style={{textAlign: "left"}}>
+                    <li>
+                      Preexisting API that have data on flashing lights
+                      Crowd-sourcing data
+                    </li>
+                    <li>Crowd-sourcing data Help those who have seizures</li>
+                  </ul>
                 </Typography>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion style={{ backgroundColor: "#19A9AD" }}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel2a-content"
@@ -81,7 +89,7 @@ export default function AboutMe() {
                 </Typography>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion style={{ backgroundColor: "#19A9AD" }}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel3a-content"
@@ -100,9 +108,17 @@ export default function AboutMe() {
                 ></img>
                 <Typography style={TypoStyle}>
                   <ul>
-                    <li style={{marginBottom: liMarginBottom}}>Gaze tracking</li>
-                    <li style={{marginBottom: liMarginBottom}}>General video algorithm that checks for epilepsy-inducing frames</li>
-                    <li style={{marginBottom: liMarginBottom}}>Community based forums to serve as support groups for people who suffer from epilepsy</li>
+                    <li style={{ marginBottom: liMarginBottom }}>
+                      Gaze tracking
+                    </li>
+                    <li style={{ marginBottom: liMarginBottom }}>
+                      General video algorithm that checks for epilepsy-inducing
+                      frames
+                    </li>
+                    <li style={{ marginBottom: liMarginBottom }}>
+                      Community based forums to serve as support groups for
+                      people who suffer from epilepsy
+                    </li>
                   </ul>
                 </Typography>
               </AccordionDetails>

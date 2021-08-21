@@ -25,6 +25,7 @@ function App() {
               <Route exact path="/home">
                 <div className="content">
                   <MovieCards/>
+                  <AboutMe></AboutMe>
                 </div>
               </Route>
             </Switch>
