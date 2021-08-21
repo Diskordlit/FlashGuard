@@ -6,8 +6,10 @@ import { } from '@material-ui/core'
 import { ThemeProvider , makeStyles } from '@material-ui/core/styles';
 import customTheme from './styling/customTheme';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import MovieCards from './component/MovieCards';
 
 function App() {
+  document.body.style = 'background: #0B3E82;';
   return (
     <ThemeProvider theme={customTheme}>
       <div className="App">
@@ -22,7 +24,8 @@ function App() {
               </Route>
               <Route exact path="/home">
                 <div className="content">
-                  Test 1
+                  <MovieCards/>
+                  <AboutMe></AboutMe>
                 </div>
               </Route>
             </Switch>
