@@ -9,7 +9,6 @@ import MovieCards from './component/MovieCards';
 import AboutMe from './component/AboutMe';
 import HomePage from './component/HomePage';
 import { useStyles } from './styling/useStyles';
-import { Scrollbars } from 'react-custom-scrollbars';
 
 
 
