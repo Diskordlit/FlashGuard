@@ -1,7 +1,7 @@
-import { Card } from "@material-ui/core";
+import { Card, CardMedia, Typography , Grid} from "@material-ui/core";
 import { Title } from "@material-ui/icons";
 
-var showId, showData, showRisk, yesVotes, noVotes, riskDescription, showTitle;
+var showRisk, showTitle, releaseYear, genre, showComments;
 
 const fetchHeaders = {
   headers: {
@@ -11,85 +11,76 @@ const fetchHeaders = {
   method: "GET",
 };
 
-// function getShowId(showId) {
-//   //var showTitle = document.querySelector("div[class=about-header] > h3 > strong").innerHTML; //get show name
-//   const showTitle = "bojack";
-//   console.log(showTitle); // get movie name
-
-//   const urlShowId =
-//     "https://chrome-extension-cors-anywhere.herokuapp.com/https://www.doesthedogdie.com/dddsearch?q=" +
-//     showTitle;
-
-//   fetch(urlShowId, fetchHeaders)
-//     .then((data) => {
-//       return data.json();
-//     })
-//     .then((res) => {
-//       showId = res.items[0].id;
-//       console.log(showId);
-//     })
-//     .catch((error) => console.log(error))
-//     .then(() => {
-//       getShowData(showId);
-//     });
-// }
-
-const safeShows = [21125, 13823, 13954, 16891];
-
-function getShowData(showId) {
+//const safeShows = [21125, 13823, 13954, 16891, 16645, 18704, 19408, 201240, 14113, 9903, 31911, ];
+const riskShows = [700663, 17596,21573,16361,20449,13163,16927,15890,14919,20457,15214,12847,22205,14300,16443,11398]
+function getShowData(showId, index) {
   const urlShowData =
     "https://chrome-extension-cors-anywhere.herokuapp.com/https://www.doesthedogdie.com/media/" +
     showId;
+  const id2 = "A" + index;
+  const id3 = "B" + index;
+  const id4 = "C" + index;
 
   fetch(urlShowData, fetchHeaders)
     .then((data) => {
       return data.json();
     })
     .then((res) => {
-    //   showData = res.topicItemStats[52];
-    showTitle = res.topicItemStats[52].itemName;
+      showTitle = res.topicItemStats[52].itemName;
+      releaseYear = res.topicItemStats[52].releaseYear || "NA";
+      genre = res.item.genre;
+      showComments = res.topicItemStats[52]?.comment || "Movie contains flashing lights or rapidly changing or alternating images (e.g. lightning, flickering lights, ambulance lights, gunfire, fast cuts, club scenes, etc.)";
 
       showRisk = res.topicItemStats[52].isYes; // 1 indicates risky
-    //   yesVotes = res.topicItemStats[52].yesSum;
-    //   noVotes = res.topicItemStats[52].noSum;
-    //   riskDescription = res.topicItemStats[52].comment;
-    //   console.log(
-    //     showRisk +
-    //       " " +
-    //       yesVotes +
-    //       " " +
-    //       noVotes +
-    //       " " +
-    //       riskDescription +
-    //       " " +
-    //       showData
-    //   );
+
       console.log("Show Id is " + showId);
       console.log("Show Name is " + showTitle);
 
-      <Card><p>Test  {showTitle} { showId } {showRisk}</p></Card>
-      
+      document.getElementById(index).innerHTML = showTitle;
+      document.getElementById(id2).innerHTML = releaseYear;
+      document.getElementById(id3).innerHTML = genre;
+      document.getElementById(id4).innerHTML = showComments;
     })
     .catch((error) => console.log(error));
 
-    console.log(showTitle);
+  console.log(showTitle);
 
-    return (
-        <>
-    <Card><p>Test { document.write(showTitle) } { showId } {showRisk}</p></Card>
+  // #19A9AD turqoise
+  // #0B3E82 dark blue
+  // #AC4298 purple
+  
+  return (
+    <>
+      <Card style={{ height: 350, width: 350 , margin: 10, backgroundColor: '#19A9AD'}}>
+        <div>
+          <Typography style={{ display: "inline-block", textAlign: "left" }}>
+            {index + 1}.)  
+          </Typography>
+          <Typography
+            id={index}
+            style={{ display: "inline-block", margin: 2 }}
+          />
+          <Typography style={{ display: "inline-block" }}>(</Typography>
+          <Typography id={id2} style={{ display: "inline-block", margin: 2 }} />
+          <Typography style={{ display: "inline-block" }}>)</Typography>
+          <Typography id={id3}></Typography>
+          <hr style={{backgroundColor: "black", height: '2px', border: 0}}></hr>
+          <Typography id={id4}></Typography>
+        </div>
+      </Card>
     </>
-    );
+  );
 }
+
+
 
 export default function MovieCards() {
   return (
-    // <div>
-    //     {safeShows && 
-    //     safeShows.map((safeShow) => 
-    //     getShowData(safeShow) 
-    //     )}
-    // </div>
-//   );
-<div>{getShowData(21125)}</div>
-  )
+    <div>
+      <Grid container spacing={2} style={{marginTop: 40}}>
+        {riskShows &&
+          riskShows.map((safeShow, index) => getShowData(safeShow, index))}
+      </Grid>
+    </div>
+  );
 }

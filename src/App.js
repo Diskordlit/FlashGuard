@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import MovieCards from './component/MovieCards';
 
 function App() {
+  document.body.style = 'background: #0B3E82;';
   return (
     <ThemeProvider theme={customTheme}>
       <div className="App">
