@@ -46,6 +46,7 @@ export const useStyles = makeStyles((theme) => ({
   appBarStyle: {
     backgroundColor: "#3F3D56",
     boxShadow: 'none',
+    width: '100%',
   },
   appBarStyle2: {
     marginTop: '64px',

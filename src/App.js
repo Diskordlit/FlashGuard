@@ -1,45 +1,53 @@
 import React from 'react';
 import './App.css';
 import NavBar from './component/NavBar'
-import { Grid } from '@material-ui/core'
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { Grid, Paper } from '@material-ui/core'
+import { ThemeProvider } from '@material-ui/core/styles';
 import customTheme from './styling/customTheme';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import MovieCards from './component/MovieCards';
 import AboutMe from './component/AboutMe';
 import HomePage from './component/HomePage';
+import { useStyles } from './styling/useStyles';
 import { Scrollbars } from 'react-custom-scrollbars';
+
+
 
 
 
 function App() {
   document.body.style = 'background: #0B3E82;';
+  const classes = useStyles();
   return (
-      <ThemeProvider theme={customTheme}>
-        <div className="App">
-          <header className="App-header">
-            <NavBar />
-          </header>
-          <body>
-            <Router>
-              <Switch>
-                <Route exact path="/">
-                  <Redirect to="/home" />
-                </Route>
-                <Route exact path="/home">
-                  <div className="content">
+    <ThemeProvider theme={customTheme}>
+
+      <div className="App">
+        <header className="App-header">
+          <NavBar />
+        </header>
+        <body>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
+              <Route exact path="/home">
+                <div className="content">
                     <HomePage />
-                    <Grid container spacing={3} style={{ padding: 12, justifyContent: "center", alignItems: "center" }} >
-                      <MovieCards />
-                    </Grid>
-                    <AboutMe></AboutMe>
-                  </div>
-                </Route>
-              </Switch>
-            </Router>
-          </body>
-        </div >
-      </ThemeProvider>
+                  <Grid container style={{ padding: 12, justifyContent: "center", alignItems: "center" }} >
+                    <Paper className={classes.paper}>
+                      <h2>Here Are Some Examples of Netflix Shows Containing Flashing Lights With Comments From Its Viewers</h2>
+                    </Paper>
+                    <MovieCards />
+                  </Grid>
+                  <AboutMe></AboutMe>
+                </div>
+              </Route>
+            </Switch>
+          </Router>
+        </body>
+      </div>
+    </ThemeProvider >
   );
 }
 

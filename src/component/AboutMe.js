@@ -1,8 +1,7 @@
 import React from "react";
 import { useStyles } from "../styling/useStyles";
-import { Card, Paper, Grid, Button } from "@material-ui/core";
+import { Paper, Grid, } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
-import NavBar from "./NavBar";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";

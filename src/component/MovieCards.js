@@ -1,7 +1,6 @@
-import { Card, CardMedia, Typography, Grid } from "@material-ui/core";
-import { Title } from "@material-ui/icons";
+import { Card, Typography, Grid } from "@material-ui/core";
 
-var showRisk, showTitle, releaseYear, genre, showComments;
+var showTitle, releaseYear, genre, showComments;
 
 const fetchHeaders = {
   headers: {
@@ -32,7 +31,6 @@ function getShowData(showId, index) {
       genre = res.item.genre;
       showComments = res.topicItemStats[52]?.comment || "Movie contains flashing lights or rapidly changing or alternating images (e.g. lightning, flickering lights, ambulance lights, gunfire, fast cuts, club scenes, etc.)";
 
-      showRisk = res.topicItemStats[52].isYes; // 1 indicates risky
 
       console.log("Show Id is " + showId);
       console.log("Show Name is " + showTitle);
