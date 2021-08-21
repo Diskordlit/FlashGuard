@@ -21,7 +21,8 @@ export default function NavBar() {
             </AppBar>
             <AppBar className={classes.appBarStyle2}>
                 <Toolbar className={classes.toolBarStyle2}>
-                    <Button variant="contained" color="secondary">About Us</Button>   
+                    <Button className={classes.toolBarButton} variant="contained" color="secondary">Search Movie</Button>
+                    <Button className={classes.toolBarButton} variant="contained" color="secondary">About Us</Button>   
                 </Toolbar>
             </AppBar>
         </div>

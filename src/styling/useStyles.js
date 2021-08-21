@@ -1,4 +1,4 @@
-import { createTheme , makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,8 +56,34 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center', //Centered vertically
     flex: 1
   },
+  toolBarButton: {
+    margin: 5,
+  },
   appBarButton: {
     backgroundColor: "#AB449A",
-  }
+  },
+  searchContainer: {
+    width: 100,
+    backgroundColor: "#121212",
+    justifyContent: 'center', //Centered horizontally
+    alignItems: 'center', //Centered vertically
+    padding: 25,
+
+  },
+  searchForm: {
+    padding: 25,
+  },
+  margin: {
+    margin: theme.spacing(1),
+  },
+  withoutLabel: {
+    marginTop: theme.spacing(3),
+  },
+  textField: {
+    width: '25vh',
+  },
+  paper: {
+    padding: theme.spacing(5),
+  },
 }));
 
