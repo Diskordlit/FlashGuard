@@ -5,9 +5,15 @@ import bg from '../assets/purpel.jpg';
 import bg2 from '../assets/chill.svg';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
+function redirectuser() {
+    
+}
 
 export default function HomePage() {
     const classes = useStyles();
+    const redirectuser = () => {
+        window.location.href='https://github.com/Diskordlit/FlashGuard'
+    }
     // const [values, setValues] = React.useState({});
     // const handleChange = (prop) => (event) => {
     //     setValues({ ...values, [prop]: event.target.value });
@@ -28,7 +34,7 @@ export default function HomePage() {
                 <Grid item xs={6} padding={10}>
                     <Paper className={classes.paper}>
                     <h2>Download our extension and start checking for Netflix shows with potential signs of flashing lights</h2>
-                        <Button variant="contained" color="secondary" size='large' startIcon={<GetAppIcon />}>Download</Button>
+                        <Button variant="contained" color="secondary" size='large' startIcon={<GetAppIcon />} onClick={redirectuser}>Download</Button>
                     </Paper>
                 </Grid>
             </Grid>

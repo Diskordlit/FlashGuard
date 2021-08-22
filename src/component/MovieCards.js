@@ -1,4 +1,5 @@
 import { Card, Typography, Grid } from "@material-ui/core";
+import React from 'react';
 
 var showTitle, releaseYear, genre, showComments;
 
@@ -29,7 +30,7 @@ function getShowData(showId, index) {
       showTitle = res.topicItemStats[52].itemName;
       releaseYear = res.topicItemStats[52].releaseYear || "NA";
       genre = res.item.genre;
-      showComments = res.topicItemStats[52]?.comment || "Movie contains flashing lights or rapidly changing or alternating images (e.g. lightning, flickering lights, ambulance lights, gunfire, fast cuts, club scenes, etc.)";
+      showComments = res.topicItemStats[52].comment || "Movie contains flashing lights or rapidly changing or alternating images (e.g. lightning, flickering lights, ambulance lights, gunfire, fast cuts, club scenes, etc.)";
 
 
       console.log("Show Id is " + showId);
