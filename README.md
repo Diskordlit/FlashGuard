@@ -3,6 +3,19 @@
 
 ![FlashGuard Icon](https://github.com/Diskordlit/FlashGuard/blob/FlashGuard-Chrome-Extension/images/flashers.png)
 
+# Chrome Extension
+## Installation
+The Chrome Extension can be downloaded by going to the [FlashGuard-Chrome-Extension](https://github.com/Diskordlit/FlashGuard/tree/FlashGuard-Chrome-Extension) branch of this repository. Upon clicking the "code" dropdown, the extension can be downloaded as a .zip file. Further instructions on how to add the extension to Chrome can be found [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
+
+<hr>
+
+## Branches to note:
+- ``scratch`` for website code (React)
+- ``FlashGuard-Chrome-Extension`` for Chrome Extension code and download
+
+<hr>
+
+# Project Details
 ## Inspiration
 We realized that some people are afraid to watch movies because of the uncertainty of experiencing an epileptic seizures. Movies nowadays have warnings of violence or sexual content but oftentimes, it lacks warnings of bright and flashing lights which pose a serious health risk for some people.
 
@@ -29,6 +42,4 @@ Flashguard provides users with information regarding movies that contain flashes
 
 <hr>
 
-# Chrome Extension
-## Installation
-The Chrome Extension can be downloaded by going to the [FlashGuard-Chrome-Extension](https://github.com/Diskordlit/FlashGuard/tree/FlashGuard-Chrome-Extension) branch of this repository. Upon clicking the code dropdown, the extension can be downloaded as a .zip file. Further instructions on how to add the extension to Chrome can be found [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
+
