@@ -7,6 +7,8 @@
 ## Installation
 The Chrome Extension can be downloaded by going to the [FlashGuard-Chrome-Extension](https://github.com/Diskordlit/FlashGuard/tree/FlashGuard-Chrome-Extension) branch of this repository. Upon clicking the "code" dropdown, the extension can be downloaded as a .zip file. Further instructions on how to add the extension to Chrome can be found [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
 
+## Screenshots and Examples (see: [DevPost](https://devpost.com/software/flashguard))
+
 <hr>
 
 ## Branches to note:
