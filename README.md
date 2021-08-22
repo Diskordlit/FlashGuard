@@ -27,7 +27,7 @@ Flashguard provides users with information regarding movies that contain flashes
 ## How we built it
 -   React.js
 -   Chrome Extension (HTML, CSS & JS)
--   API (Does the Dog Die API v1.1.)
+-   API ([Does the Dog Die API v1.1.](https://www.doesthedogdie.com/api))
 
 ## What's next for FlashGuard
 - Gaze Tracking
