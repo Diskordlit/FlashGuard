@@ -13,9 +13,9 @@ export default function NavBar() {
                         FlashGuard
                     </Typography>
                     <div className="buttonContainer">
-                        <Button className={classes.toolBarButton} variant="contained" color="secondary">Try The Extension</Button>
+                        {/* <Button className={classes.toolBarButton} variant="contained" color="secondary">Try The Extension</Button>
                         <Button className={classes.toolBarButton} variant="contained" color="secondary">Examples</Button>
-                        <Button className={classes.toolBarButton} variant="contained" color="secondary">About Us</Button>
+                        <Button className={classes.toolBarButton} variant="contained" color="secondary">About Us</Button> */}
                     </div>
                 </Toolbar>
             </AppBar>

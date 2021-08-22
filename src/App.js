@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './component/NavBar'
-import { Grid, Paper } from '@material-ui/core'
+import { Grid, Paper, Typography } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/core/styles';
 import customTheme from './styling/customTheme';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
@@ -32,10 +32,12 @@ function App() {
               </Route>
               <Route exact path="/home">
                 <div className="content">
-                    <HomePage />
+                  <HomePage />
                   <Grid container style={{ padding: 12, justifyContent: "center", alignItems: "center" }} >
                     <Paper className={classes.paper}>
-                      <h2>Here Are Some Examples of Netflix Shows Containing Flashing Lights With Comments From Its Viewers</h2>
+                      <Typography>
+                        <h2>Here Are Some Examples of Netflix Shows Containing Flashing Lights With Comments From Its Viewers</h2>
+                      </Typography>
                     </Paper>
                     <MovieCards />
                   </Grid>

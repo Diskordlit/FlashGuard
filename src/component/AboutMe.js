@@ -22,7 +22,9 @@ export default function AboutMe() {
       <Grid justifyContent="center" container spacing={3}>
         <Grid item xs={10}>
           <Paper className={classes.paper}>
-            <h1>About Us</h1>
+            <Typography>
+              <h1>About Us</h1>
+            </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
@@ -38,7 +40,7 @@ export default function AboutMe() {
                   <b>Who are we?</b>
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails style={{ backgroundColor: "#5B587C"}}>
+              <AccordionDetails style={{ backgroundColor: "#5B587C" }}>
                 <Typography style={{ color: "white", justifyContent: "center", textAlign: "center", marginTop: 60, marginLeft: 90 }}>
                   A small group of students that plans to Prevent seizure caused
                   by photosensitivity using:
@@ -57,7 +59,7 @@ export default function AboutMe() {
                   width="240px"
                   position="absolute"
                   right="0"
-                  style={{marginLeft: 500}}
+                  style={{ marginLeft: 500 }}
                 ></img>
               </AccordionDetails >
             </Accordion>
@@ -107,7 +109,7 @@ export default function AboutMe() {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel3a-content"
                 id="panel3a-header"
-                
+
               >
                 <Typography className={classes.heading}>
                   <b>Future plans</b>
@@ -134,7 +136,7 @@ export default function AboutMe() {
                   alt="teaching"
                   height="240px"
                   width="240px"
-                  style={{marginLeft: 500}}
+                  style={{ marginLeft: 500 }}
                 ></img>
               </AccordionDetails>
             </Accordion>
