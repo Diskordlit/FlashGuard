@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# FlashGuard
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![FlashGuard Icon](https://github.com/Diskordlit/FlashGuard/blob/FlashGuard-Chrome-Extension/images/flashers.png)
 
-## Available Scripts
+## Inspiration
+We realized that some people are afraid to watch movies because of the uncertainty of experiencing an epileptic seizures. Movies nowadays have warnings of violence or sexual content but oftentimes, it lacks warnings of bright and flashing lights which pose a serious health risk for some people.
 
-In the project directory, you can run:
+## What it does
+Flashguard provides users with information regarding movies that contain flashes or strobing lights. Users can now make an informed decision on what movies they can watch.
 
-### `yarn start`
+## How we built it
+-   React.js
+-   Chrome Extension (HTML, CSS & JS)
+-   API (Does the Dog Die API v1.1.)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What's next for FlashGuard
+- Gaze Tracking
+  -  Contacts nearby people or emergency contacts if the user 
+      gets into seizure 
+  -  Asks for hand gestures in case of false positives
+  -  Done local to ensure privacy and security
+- YouTube Add-on
+  - Detects if a YouTube video has any flicking images
+  - Uses frame by frame analysis by comparing its luminosity
+- Crowdsourcing​
+  - Collects and reflects data given from platform users
+  - Further increasing accuracy by using two data sets
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<hr>
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Chrome Extension
+## Installation
+The Chrome Extension can be downloaded by going to the [FlashGuard-Chrome-Extension](https://github.com/Diskordlit/FlashGuard/tree/FlashGuard-Chrome-Extension) branch of this repository. Upon clicking the code dropdown, the extension can be downloaded as a .zip file. Further instructions on how to add the extension to Chrome can be found [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
