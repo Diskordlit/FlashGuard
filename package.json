@@ -1,0 +1,14 @@
+{
+  "name": "doesthedogdieapi",
+  "version": "1.0.0",
+  "description": "Testing doesthedogdie.com API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.1.25"
+  }
+}
