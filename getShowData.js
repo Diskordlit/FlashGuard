@@ -27,11 +27,14 @@ function getShowInfo(){
                 fetch(urlShowData, fetchHeaders)
                 .then(data=>{return data.json()})
                 .then(res=>{
-                    showData = res.topicItemStats[52];
+
+                    const metricID = 56; // Flashing Lights ID
+
+                    showData = res.topicItemStats[metricID];
                     
                     document.getElementById('showTitle').innerHTML = showTitle;
 
-                    showRisk = res.topicItemStats[52].isYes;  // 1 indicates risky
+                    showRisk = res.topicItemStats[metricID].isYes;  // 1 indicates risky
 
                     if (showRisk == 0) {
                         document.getElementById('showStatus').innerHTML = 'Safe!';
@@ -42,8 +45,8 @@ function getShowInfo(){
                         document.getElementById('showStatusImg').src = '\\images\\src\\danger.png';
                     }
 
-                    yesVotes = res.topicItemStats[52].yesSum;
-                    noVotes = res.topicItemStats[52].noSum;
+                    yesVotes = res.topicItemStats[metricID].yesSum;
+                    noVotes = res.topicItemStats[metricID].noSum;
 
                     if (yesVotes > noVotes){
                         document.getElementById('showSum').innerHTML = `${yesVotes} / ${yesVotes + noVotes} votes`;
@@ -51,7 +54,7 @@ function getShowInfo(){
                         document.getElementById('showSum').innerHTML = `${noVotes} / ${yesVotes + noVotes} votes`;
                     }
 
-                    riskDescription = res.topicItemStats[52].comment;
+                    riskDescription = res.topicItemStats[metricID].comment;
                     document.getElementById('showComment').innerHTML = riskDescription;
                             
                 })
