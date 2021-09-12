@@ -1,30 +1,27 @@
 function keywordMatchAnalyzer(keywordString) {
     let searchArray = shortDescExtractor()
-    let keywordCount = keywordString.split(/\s/g).length
-    console.log(keywordCount)
+    // console.log(searchArray)
     let keywordPattern = keywordString.split(/\s/g).join('|')
     let keywordRegex = new RegExp(keywordPattern, 'g')
     let searchObject = {
         array: searchArray,
-        regex: keywordRegex,
-        count: keywordCount
+        regex: keywordRegex
     }
     return percentageCounter(searchObject)
+    // console.log(percentageCounter(searchObject))
 }
 
 function percentageCounter({
     array,
-    regex,
-    count
+    regex
 }) {
     let result = []
     array.forEach(value => {
-        console.log(countFilter(value))
-        let match = value.match(regex)
-        console.log(value.match(regex))
+        let match = value['shortDescription'].match(regex)
         result.push({
-            'searchWord': value,
-            'percentage': match ? Math.round(((match.length / countFilter(value).length) + Number.EPSILON) * 100) : 0
+            'topicID': value['topicID'],
+            'searchWord': value['shortDescription'],
+            'percentage': match ? Math.round(((match.length / countFilter(value['shortDescription']).length) + Number.EPSILON) * 100) : 0
         })
     })
     return result
@@ -39,9 +36,9 @@ function shortDescExtractor() {
     let shortDescJSON = require('../shortDescDictionary.json')
     let shortDescArray = []
     shortDescJSON.forEach(value => {
-        shortDescArray.push(
-            value['shortDescription']
-        )
+        shortDescArray.push({
+            ...value
+        })
     })
     return shortDescArray
 }

@@ -7,13 +7,14 @@ const keywordMatchAnalyzer = require('../utils/keywordMatchAnalyzer.js')
 
 function getShowInfo({
     showId,
-    category
+    categoryId,
+    categoryString
 }) {
     const option = {
         hostname: 'www.doesthedogdie.com',
         path: `/media/${showId}`,
         headers: {
-            'X-API-KEY': 'd670056d6eae327a1c60f652a2476a86',
+            'X-API-KEY': process.env.X_API_KEY,
             'Accept': 'application/json'
         }
     }
@@ -29,10 +30,15 @@ function getShowInfo({
                 fs.mkdirSync('./showData');
             }
             const title = `${data['item']['name'].replace(/\s/g, '').toLowerCase()}_${data['item']['id']}_${nanoid(10)}`
-            // Debug only
-            // Keyword search
-            //.console.log(categoryKeywordScrapper(data['topicItemStats'], 'cheese'))
-            fs.writeFileSync(`./showData/${title}.json`, JSON.stringify(categoryScrapper(data['topicItemStats'], category)))
+
+            if (categoryId) {
+                fs.writeFileSync(`./showData/${title}.json`, JSON.stringify(categoryScrapper(data['topicItemStats'], categoryId)))
+                return console.log('Using category ID by default')
+            }
+
+            fs.writeFileSync(`./showData/${title}.json`, JSON.stringify(categoryKeywordScrapper(data['topicItemStats'], categoryString)))
+
+            return console.log('Action completed')
         })
 
         response.on('error', error => {
@@ -63,23 +69,43 @@ function categoryScrapper(array, category) {
 }
 
 function categoryKeywordScrapper(array, categoryString) {
+    let sortingArray = []
     let resultArray = []
     if (!categoryString) {
-        categoryString = 'flashing light'
+        categoryString = 'flash'
     }
-    let highestPercentage = {
-        searchWord: 'N/A',
-        percentage: 0
-    }
-    resultArray.push(...keywordMatchAnalyzer(categoryString))
+    let closeMatch = []
+    sortingArray.push(...keywordMatchAnalyzer(categoryString))
 
-    // Bubble sort
-    for (let i = 0; i < resultArray.length; i++) {
-        if (resultArray[i]['percentage'] > highestPercentage['percentage']) {
-            highestPercentage = resultArray[i]
+    for (let i = 0; i < sortingArray.length; i++) {
+        if (sortingArray[i]['percentage'] > 0) {
+            closeMatch.push(sortingArray[i])
         }
     }
-    return highestPercentage
+
+    closeMatch = closeMatch.sort(compareForSorting)
+
+    for (let i = 0; i < array.length; i++) {
+        closeMatch.forEach(value => {
+            if (array[i]['TopicId'] === value['topicID']) {
+                resultArray.push({
+                    ...array[i]
+                })
+                return
+            }
+        })
+    }
+
+    return resultArray.length === 0 ? {
+        error: 'No Data'
+    } : resultArray
+}
+
+function compareForSorting(a, b) {
+    // Sorts the closest match to the top part of the array, descending order
+    if (a['percentage'] < b['percentage']) return 1
+    if (a['percentage'] > b['percentage']) return -1
+    return 0
 }
 
 module.exports = getShowInfo

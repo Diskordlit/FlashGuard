@@ -8,7 +8,7 @@ function getLatestCategoryData({
         hostname: 'www.doesthedogdie.com',
         path: `/media/${showId}`,
         headers: {
-            'X-API-KEY': 'd670056d6eae327a1c60f652a2476a86',
+            'X-API-KEY': process.env.X_API_KEY,
             'Accept': 'application/json'
         }
     }
