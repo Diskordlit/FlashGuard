@@ -3,6 +3,7 @@ const fs = require('fs')
 const {
     nanoid
 } = require('nanoid')
+const keywordMatchAnalyzer = require('../utils/keywordMatchAnalyzer.js')
 
 function getShowInfo({
     showId,
@@ -28,6 +29,9 @@ function getShowInfo({
                 fs.mkdirSync('./showData');
             }
             const title = `${data['item']['name'].replace(/\s/g, '').toLowerCase()}_${data['item']['id']}_${nanoid(10)}`
+            // Debug only
+            // Keyword search
+            // console.log(categoryKeywordScrapper(data['topicItemStats'], 'dead animals'))
             fs.writeFileSync(`./showData/${title}.json`, JSON.stringify(categoryScrapper(data['topicItemStats'], category)))
         })
 
@@ -63,14 +67,19 @@ function categoryKeywordScrapper(array, categoryString) {
     if (!categoryString) {
         categoryString = 'flashing light'
     }
-    for (let i = 0; i < array.length; i++) {
-        if (categoryString.includes(array[i]['TopicId'])) {
-            resultArray.push({
-                ...array[i]
-            })
+    let highestPercentage = {
+        searchWord: 'N/A',
+        percentage: 0
+    }
+    resultArray.push(...keywordMatchAnalyzer(categoryString))
+
+    // Bubble sort
+    for (let i = 0; i < resultArray.length; i++) {
+        if (resultArray[i]['percentage'] > highestPercentage['percentage']) {
+            highestPercentage = resultArray[i]
         }
     }
-    return resultArray
+    return highestPercentage
 }
 
 module.exports = getShowInfo

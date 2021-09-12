@@ -1,17 +1,52 @@
-
-const dummyKeywordA = ['dog', 'live']
-const dummyKeywordB = ['dog', 'die']
-const dummyKeywordC = ['cat', 'live']
-const dummyKeywordD = ['cat', 'die']
-
-
 function keywordMatchAnalyzer(keywordString) {
-    let splitString = keywordString.split(/\s/g)
-    // let removedArticle = articleRemover(splitString)
-    console.log(removedArticle)
-    // let scoreArray = []
+    let searchArray = shortDescExtractor()
+    let keywordCount = keywordString.split(/\s/g).length
+    console.log(keywordCount)
+    let keywordPattern = keywordString.split(/\s/g).join('|')
+    let keywordRegex = new RegExp(keywordPattern, 'g')
+    let searchObject = {
+        array: searchArray,
+        regex: keywordRegex,
+        count: keywordCount
+    }
+    return percentageCounter(searchObject)
 }
 
+function percentageCounter({
+    array,
+    regex,
+    count
+}) {
+    let result = []
+    array.forEach(value => {
+        console.log(countFilter(value))
+        let match = value.match(regex)
+        console.log(value.match(regex))
+        result.push({
+            'searchWord': value,
+            'percentage': match ? Math.round(((match.length / countFilter(value).length) + Number.EPSILON) * 100) : 0
+        })
+    })
+    return result
+}
+
+function countFilter(value) {
+    let newValue = value.split(/(?:\s|\(|\)|\/|")/g)
+    return newValue.filter(value => value)
+}
+
+function shortDescExtractor() {
+    let shortDescJSON = require('../shortDescDictionary.json')
+    let shortDescArray = []
+    shortDescJSON.forEach(value => {
+        shortDescArray.push(
+            value['shortDescription']
+        )
+    })
+    return shortDescArray
+}
+
+// Unused
 function articleRemover(array) {
     let replacedString = []
     let filteredString = []

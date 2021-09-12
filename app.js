@@ -17,8 +17,8 @@ const searchObject = {
 
 // getLatestCategoryData(searchObject)
 
-// getShowInfo(searchObject)
+getShowInfo(searchObject)
 
 // getShortDescData(searchObject)
 
-keywordMatchAnalyzer('There is a dog who died. And then the cat runs away')
+// keywordMatchAnalyzer('dog dies')
