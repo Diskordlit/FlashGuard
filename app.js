@@ -1,10 +1,10 @@
-const getLatestCategoryData = require('./utils/getShortDescData.js')
+const getLatestCategoryData = require('./utils/getLatestCategoryData')
 const getMediaId = require('./utils/getMediaId.js')
 const getShowInfo = require('./utils/getShowInfo.js')
 const getShortDescData = require('./utils/getShortDescData.js')
 const keywordMatchAnalyzer = require('./utils/keywordMatchAnalyzer.js')
 
-let keyword = 'Stranger Things', showId = 700663, category = [232, 188], categoryString
+let keyword, showId, category, categoryString
 
 const searchObject = {
     keyword: keyword || 'The Good Doctor',

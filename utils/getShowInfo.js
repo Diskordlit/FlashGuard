@@ -31,7 +31,7 @@ function getShowInfo({
             const title = `${data['item']['name'].replace(/\s/g, '').toLowerCase()}_${data['item']['id']}_${nanoid(10)}`
             // Debug only
             // Keyword search
-            // console.log(categoryKeywordScrapper(data['topicItemStats'], 'dead animals'))
+            //.console.log(categoryKeywordScrapper(data['topicItemStats'], 'cheese'))
             fs.writeFileSync(`./showData/${title}.json`, JSON.stringify(categoryScrapper(data['topicItemStats'], category)))
         })
 
