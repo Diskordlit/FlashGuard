@@ -1,4 +1,4 @@
-var showId, showData, showRisk, yesVotes, noVotes, riskDescription;
+var showId, showRisk, yesVotes, noVotes, riskDescription;
 
 function getShowInfo(){
     setTimeout(() => {
@@ -28,10 +28,24 @@ function getShowInfo(){
                 .then(data=>{return data.json()})
                 .then(res=>{
 
-                    const metricID = 56; // Flashing Lights ID
+                    var metricID = 0;
+                    var current_TopicId;
+                    const flashinglights_TopicId = 167; // Flashing Lights ID
 
-                    showData = res.topicItemStats[metricID];
-                    
+                    while (metricID < res.topicItemStats.length){
+                        current_TopicId = res.topicItemStats[metricID].TopicId;
+
+                        if (current_TopicId == flashinglights_TopicId){ // if search criteria found,
+                            break;                                      // stop searching
+                        }
+
+                        metricID++;
+
+                        if (metricID >= res.topicItemStats.length){ // if exceed length of JSON,
+                            metricID == undefined;                  // remove value from metricID
+                        }
+                    }
+
                     document.getElementById('showTitle').innerHTML = showTitle;
 
                     showRisk = res.topicItemStats[metricID].isYes;  // 1 indicates risky
