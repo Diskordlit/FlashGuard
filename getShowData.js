@@ -35,8 +35,13 @@ function getShowInfo(){
                     while (metricID < res.topicItemStats.length){
                         current_TopicId = res.topicItemStats[metricID].TopicId;
 
-                        if (current_TopicId == flashinglights_TopicId){ // if search criteria found,
-                            break;                                      // stop searching
+                        if (current_TopicId == flashinglights_TopicId){         // if search criteria found,
+                            
+                            if (res.topicItemStats[metricID].voteSum == null){  // make unavailable if there are no votes
+                                throw err
+                            }
+
+                            break;                                              // else, stop searching
                         }
 
                         metricID++;
