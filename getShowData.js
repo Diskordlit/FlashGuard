@@ -53,7 +53,17 @@ function getShowInfo(){
 
                     document.getElementById('showTitle').innerHTML = showTitle;
 
-                    showRisk = res.topicItemStats[metricID].isYes;  // 1 indicates risky
+                    yesVotes = res.topicItemStats[metricID].yesSum;
+                    noVotes = res.topicItemStats[metricID].noSum;
+
+                    if (noVotes > yesVotes){
+                        showRisk = 0; // low risk
+                    } else {
+                        showRisk = 1; // risky
+                    }
+
+                    // isYes deprecated in API
+                    //showRisk = res.topicItemStats[metricID].isYes;  // 1 indicates risky
 
                     if (showRisk == 0) {
                         document.getElementById('showStatus').innerHTML = 'Safe!';
@@ -63,9 +73,6 @@ function getShowInfo(){
                         document.getElementById('showStatus').style.color = '#E04F5F';
                         document.getElementById('showStatusImg').src = '\\images\\src\\danger.png';
                     }
-
-                    yesVotes = res.topicItemStats[metricID].yesSum;
-                    noVotes = res.topicItemStats[metricID].noSum;
 
                     if (yesVotes > noVotes){
                         document.getElementById('showSum').innerHTML = `${yesVotes} / ${yesVotes + noVotes} votes`;
