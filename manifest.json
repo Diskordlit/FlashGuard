@@ -1,7 +1,7 @@
 {
     "name": "FlashGuard",
-    "description": "Enjoy a safer movie experience with FlashGuard",
-    "version": "1.0",
+    "description": "Be warned of epileptic shows before you watch!",
+    "version": "1.21",
     "manifest_version": 3,
     "permissions": ["storage", "activeTab", "scripting"],
     "action": {
@@ -19,5 +19,8 @@
       "32": "/images/logo32.png",
       "48": "/images/logo48.png",
       "128": "/images/logo128.png"
-    }
+    },
+    "host_permissions": [
+      "https://www.doesthedogdie.com/"
+    ]
 }

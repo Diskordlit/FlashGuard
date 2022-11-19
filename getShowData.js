@@ -4,7 +4,7 @@ function getShowInfo(){
     setTimeout(() => {
         chrome.storage.sync.get("showTitle", ({ showTitle }) => {
 
-            const urlShowId = 'https://chrome-extension-cors-anywhere.herokuapp.com/https://www.doesthedogdie.com/dddsearch?q=' + showTitle;
+            const urlShowId = 'https://www.doesthedogdie.com/dddsearch?q=' + showTitle;
 
             const fetchHeaders = {
             headers : {
@@ -22,7 +22,7 @@ function getShowInfo(){
             })
             .catch(error=>console.log(error))
             .then( () => {
-                const urlShowData = 'https://chrome-extension-cors-anywhere.herokuapp.com/https://www.doesthedogdie.com/media/' + showId;
+                const urlShowData = 'https://www.doesthedogdie.com/media/' + showId;
 
                 fetch(urlShowData, fetchHeaders)
                 .then(data=>{return data.json()})
